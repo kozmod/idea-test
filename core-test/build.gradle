@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.idea.test'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.5.1'
+
+}

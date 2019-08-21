@@ -1,0 +1,4 @@
+rootProject.name = 'idea-test'
+include 'core-test'
+include 'spring-core-test'
+
