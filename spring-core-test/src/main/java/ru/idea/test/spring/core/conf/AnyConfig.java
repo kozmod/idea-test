@@ -16,6 +16,16 @@ public class AnyConfig {
     }
 
     @Bean
+    public AnyBeanPostProcessor anyPostProcessor() {
+        return new AnyBeanPostProcessor();
+    }
+
+    @Bean
+    public AnyBeanFactoryPostProcessor anyBeanFactoryPostProcessor() {
+        return new AnyBeanFactoryPostProcessor();
+    }
+
+    @Bean
     public AnyAspect anyAspect() {
         return new AnyAspect();
     }

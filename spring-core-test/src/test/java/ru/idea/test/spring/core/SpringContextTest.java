@@ -13,6 +13,6 @@ public class SpringContextTest {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AnyConfig.class);
 
         AnyBean anyBean =  applicationContext.getBean(AnyBean.class);
-        anyBean.setValue("AAAAAA");
+        anyBean.addPrefix("FOO");
     }
 }

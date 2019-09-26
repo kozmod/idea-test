@@ -16,6 +16,14 @@ public class AnyBean {
         return this;
     }
 
+    public String addPrefix(String value) {
+        return "Prefix:" + value;
+    }
+
+    private static void throwEx() {
+        throw new RuntimeException("Sone RuntimeException");
+    }
+
     @Override
     public String toString() {
         return new StringJoiner(", ", AnyBean.class.getSimpleName() + "[", "]")
