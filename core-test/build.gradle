@@ -12,5 +12,8 @@ repositories {
 }
 
 dependencies {
+    compile group: 'com.github.davidmoten', name: 'big-sorter', version: '0.1.9'
+    compile group: 'org.apache.commons', name: 'commons-csv', version: '1.7'
+    
     testCompile group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.5.1'
 }

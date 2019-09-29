@@ -1,5 +1,9 @@
 package ru.idea.test.core;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.function.Consumer;
 
 public final class TestUtils {
@@ -24,5 +28,17 @@ public final class TestUtils {
         final long start = System.currentTimeMillis();
         task.run();
         return System.currentTimeMillis() - start;
+    }
+
+    public static long fileLineQuantity(File file) {
+        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+            long lineNumber = 0;
+            while (br.readLine() != null) {
+                lineNumber++;
+            }
+            return lineNumber;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

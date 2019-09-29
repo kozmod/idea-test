@@ -5,13 +5,15 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 public final class FileLineProcessor {
 
-    private final BiConsumer<Long, String> lineNumberValueConsumer;
+    private final Function<String,?> lineConsumer;
 
-    public FileLineProcessor(BiConsumer<Long, String> lineNumberValueConsumer) {
-        this.lineNumberValueConsumer = lineNumberValueConsumer;
+    public FileLineProcessor(Function<String,?> lineNumberValueConsumer) {
+        this.lineConsumer = lineNumberValueConsumer;
     }
 
     public long process(String file) {
@@ -23,7 +25,7 @@ public final class FileLineProcessor {
             String line;
             long lineNumber = 0;
             while ((line = br.readLine()) != null) {
-                lineNumberValueConsumer.accept(++lineNumber, line);
+                lineConsumer.apply(line);
             }
             return lineNumber;
         } catch (IOException e) {

@@ -1,4 +1,6 @@
-package ru.idea.test.core.file;
+package ru.idea.test.core.file.csv;
+
+import ru.idea.test.core.TestUtils;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -9,30 +11,41 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class GenerateRandomCsv {
 
-    static final String CSV_LINE_DELIMITER = ";";
+    public static final char CSV_LINE_DELIMITER = ';';
 
-    static final long LINE_QUANTITY = 10_000_000;
     static final String FILE_NAME = "\\Random_CSV_Lines.csv";
-    static final String FILE_PATH = "D:\\IdeaProjects\\idea-test\\core-test\\src\\test\\resources" + FILE_NAME;
+    public static final String CSV_RESOURCES_INPUT_PATH = "D:\\IdeaProjects\\idea-test\\core-test\\src\\test\\resources\\csv\\input";
+    public static final String FILE_PATH = CSV_RESOURCES_INPUT_PATH + FILE_NAME;
+
+    static final long LINE_QUANTITY = 100_000_000;
 
     public static void main(String[] args) {
+        long exMillis = TestUtils.executionTime(GenerateRandomCsv::generateRandomCsv);
+        System.err.println(exMillis);
+    }
+
+    static void generateRandomCsv() {
         try (BufferedWriter br = new BufferedWriter(new FileWriter(new File(FILE_PATH)))) {
             for (int i = 1; i <= LINE_QUANTITY; i++) {
-                br.write(randomCsvLine());
+                String line = randomCsvLine();
+                br.write(line);
                 br.newLine();
             }
             br.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
     static String randomCsvLine() {
-        return ThreadLocalRandom.current().nextLong(1,10)
+        String id = Long.toString(ThreadLocalRandom.current().nextLong(1, 1000000));
+        String secondColumn = randomString();
+        String thirdColumn = randomString();
+        return id
                 + CSV_LINE_DELIMITER
-                + randomString()
+                + secondColumn
                 + CSV_LINE_DELIMITER
-                + randomString();
+                + thirdColumn;
 
     }
 
