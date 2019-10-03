@@ -1,4 +1,4 @@
-package ru.idea.test.core.function;
+package ru.idea.test.core.functional.style;
 
 import org.junit.Test;
 

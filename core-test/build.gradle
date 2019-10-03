@@ -6,6 +6,7 @@ group 'ru.idea.test'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 11
+def jmhVersion = 1.21
 
 repositories {
     mavenCentral()
@@ -14,6 +15,10 @@ repositories {
 dependencies {
     compile group: 'com.github.davidmoten', name: 'big-sorter', version: '0.1.9'
     compile group: 'org.apache.commons', name: 'commons-csv', version: '1.7'
+    
+    compile group: 'org.openjdk.jmh', name: 'jmh-core', version: jmhVersion
+    compile group: 'org.openjdk.jmh', name: 'jmh-generator-annprocess', version: jmhVersion
+//    testCompile group: 'org.openjdk.jmh', name: 'jmh-generator-annprocess', version: jmhVersion
     
     testCompile group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.5.1'
 }
