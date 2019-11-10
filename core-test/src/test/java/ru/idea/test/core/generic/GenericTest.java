@@ -2,10 +2,7 @@ package ru.idea.test.core.generic;
 
 import org.junit.Test;
 
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 
@@ -16,10 +13,9 @@ public class GenericTest {
         List<Integer> ints = new ArrayList<>();
         Class<? extends List> k = ints.getClass();
         assert k == ArrayList.class;
-
     }
 
-    static <T extends Printer & Scaner> void doThx(List<T> list){
+    static <T extends Printer & Scanner> void doThx(List<T> list){
         list.forEach(ps ->{
             ps.scan("aaa");
             ps.print();
@@ -27,7 +23,7 @@ public class GenericTest {
 
     }
 
-    static class PrSc implements Printer, Scaner{
+    static class PrSc implements Printer, Scanner {
 
         private List<String> scannedData = new ArrayList<>();
 
@@ -48,7 +44,7 @@ public class GenericTest {
          void print();
     }
 
-    interface Scaner{
+    interface Scanner {
         String scan(String value);
     }
 
