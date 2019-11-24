@@ -11,7 +11,7 @@ import java.util.concurrent.SubmissionPublisher;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
-import static ru.idea.test.core.concurrent.ConcurrentUtils.sleepingRunnable;
+import static ru.idea.test.core.ConcurrentUtils.sleepingRunnable;
 
 public class FlowTest {
 

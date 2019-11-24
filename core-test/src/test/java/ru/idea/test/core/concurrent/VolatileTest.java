@@ -2,6 +2,7 @@ package ru.idea.test.core.concurrent;
 
 import org.junit.Before;
 import org.junit.Test;
+import ru.idea.test.core.ConcurrentUtils;
 import ru.idea.test.core.DecimalFormatFactory;
 import ru.idea.test.core.TestUtils;
 

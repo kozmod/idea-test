@@ -6,8 +6,9 @@ import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNull;
 
 public class ClassloaderTest {
+
     @Test
-    public void shouldGetClassloader_From() {
+    public void shouldGetClassloader_FromClass() {
         ClassLoader appClassloader = TestClass.class.getClassLoader();
         ClassLoader bootstrapClassloader = String.class.getClassLoader();
         assertEquals("jdk.internal.loader.ClassLoaders$AppClassLoader", appClassloader.getClass().getName());

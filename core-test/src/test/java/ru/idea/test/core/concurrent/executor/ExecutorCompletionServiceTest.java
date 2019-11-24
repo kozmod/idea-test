@@ -27,7 +27,7 @@ public class ExecutorCompletionServiceTest {
 
     @Test
     @Ignore
-    public void should() throws InterruptedException, ExecutionException {
+    public void shouldWork() throws InterruptedException, ExecutionException {
         final ExecutorService executor = Executors.newFixedThreadPool(2);
         final ExecutorCompletionService<String> service = new ExecutorCompletionService<>(executor);
         tasks.forEach(service::submit);

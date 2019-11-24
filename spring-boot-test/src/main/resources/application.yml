@@ -1,0 +1,36 @@
+spring:
+  main:
+    banner-mode: log
+  application:
+    name: App
+  profiles:
+    active: DEV
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    export:
+      atlas:
+        enabled: false
+
+---
+spring:
+  profiles: DEV
+  custom:
+    rs-to-root-get: Hello SB - DEV!
+server:
+      port: 8080
+---
+spring:
+  profiles: PROD
+  custom:
+    rs-to-root-get: Hello SB - PROD!
+server:
+  port: 9090
+
+
+
+

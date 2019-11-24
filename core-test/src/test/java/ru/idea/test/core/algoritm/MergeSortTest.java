@@ -19,33 +19,35 @@ public class MergeSortTest {
         System.out.println(Arrays.toString(actual));
     }
 
-    public static void mergeSort(int[] a, int n) {
-        if (n < 2) {
+    public static void mergeSort(int[] array, int length) {
+        if (length < 2) {
             return;
         }
-        final var mid = n / 2;
-        final var l = new int[mid];
-        final var r = new int[n - mid];
+        final var mid = length / 2;
+        final var left = new int[mid];
+        final var right = new int[length - mid];
 
-        System.arraycopy(a, 0, l, 0, mid);
-        System.arraycopy(a, mid, r, 0, n - mid);
+        System.arraycopy(array, 0, left, 0, mid);
+        System.arraycopy(array, mid, right, 0, length - mid);
 
-        mergeSort(l, mid);
-        mergeSort(r, n - mid);
+        mergeSort(left, mid);
+        mergeSort(right, length - mid);
 
-        merge(a, l, r, mid, n - mid);
+        merge(array, left, right, mid, length - mid);
     }
 
-    public static void merge(int[] a, int[] l, int[] r, int left, int right) {
-        int i = 0, j = 0, k = 0;
-        while (i < left && j < right) {
-            if (l[i] <= r[j])
-                a[k++] = l[i++];
+    public static void merge(int[] source, int[] left, int[] mid, int leftSize, int rightSize) {
+        int i = 0,
+                j = 0,
+                k = 0;
+        while (i < leftSize && j < rightSize) {
+            if (left[i] <= mid[j])
+                source[k++] = left[i++];
             else
-                a[k++] = r[j++];
+                source[k++] = mid[j++];
         }
-        while (i < left) a[k++] = l[i++];
+        while (i < leftSize) source[k++] = left[i++];
 
-        while (j < right) a[k++] = r[j++];
+        while (j < rightSize) source[k++] = mid[j++];
     }
 }
