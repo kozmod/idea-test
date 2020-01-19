@@ -3,9 +3,9 @@ package ru.idea.test.core.algoritm;
 import java.util.ArrayList;
 import java.util.Collections;
 
-final class AlgorithmUtils {
+public final class AlgorithmUtils {
 
-    static int[] newShuffledArray(int[] array) {
+    public static int[] newShuffledArray(int[] array) {
         if (array != null && array.length != 0) {
             final ArrayList<Integer> list = new ArrayList<>();
             for (Integer value : array) {
