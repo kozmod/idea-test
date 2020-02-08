@@ -28,6 +28,6 @@ dependencies {
 test {
     filter {
         //all classes in package, recursively
-        includeTestsMatching "ru.idea.test.jmh*"
+        includeTestsMatching "ru.idea.test.core.concurent*"
     }
 }

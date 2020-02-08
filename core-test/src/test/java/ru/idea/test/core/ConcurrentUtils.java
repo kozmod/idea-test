@@ -1,6 +1,7 @@
 package ru.idea.test.core;
 
 import java.util.concurrent.TimeUnit;
+import java.util.function.Consumer;
 
 public final class ConcurrentUtils {
 
@@ -22,5 +23,13 @@ public final class ConcurrentUtils {
             }
             runnable.run();
         };
+    }
+
+    public static void sleep(int sleepingSeconds) {
+        try {
+            TimeUnit.SECONDS.sleep(sleepingSeconds);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

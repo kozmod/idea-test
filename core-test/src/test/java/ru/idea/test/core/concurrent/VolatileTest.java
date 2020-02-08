@@ -15,7 +15,6 @@ import static org.junit.Assert.assertNotEquals;
 public final class VolatileTest {
 
     private static volatile int volatileVar;
-    private AtomicInteger atomicVar = new AtomicInteger();
 
     private static void incrementVar() {
         volatileVar++;
@@ -40,7 +39,7 @@ public final class VolatileTest {
         t1.join();
         t2.join();
 
-        System.out.println(DecimalFormatFactory.defaultInteger().format(volatileVar));
+        System.err.println(DecimalFormatFactory.defaultInteger().format(volatileVar));
         assertNotEquals(iterationQuantity * 2, volatileVar);
     }
 
@@ -53,7 +52,7 @@ public final class VolatileTest {
         t1.join();
         t2.join();
 
-        System.out.println(DecimalFormatFactory.defaultInteger().format(volatileVar));
+        System.err.println(DecimalFormatFactory.defaultInteger().format(volatileVar));
         assertEquals(iterationQuantity * 2, volatileVar);
     }
 }

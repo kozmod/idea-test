@@ -19,7 +19,6 @@ import java.util.concurrent.locks.ReentrantLock;
 public class DeadLockTest {
 
     @Test
-    @Ignore
     public void shouldDeadLock_useSynchronizedBlock() throws InterruptedException {
         Object r1 = new Object();
         Object r2 = new Object();
