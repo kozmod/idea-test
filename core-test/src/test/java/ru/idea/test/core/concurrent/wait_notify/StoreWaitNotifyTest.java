@@ -1,9 +1,9 @@
-package ru.idea.test.core.concurrent;
+package ru.idea.test.core.concurrent.wait_notify;
 
 import org.junit.Test;
 import ru.idea.test.core.ConcurrentUtils;
 
-public class WaitNotifyTest {
+public class StoreWaitNotifyTest {
 
     private static final int PRODUCT_LIMIT = 10;
     private static final int PRODUCT_QUANTITY = 100;

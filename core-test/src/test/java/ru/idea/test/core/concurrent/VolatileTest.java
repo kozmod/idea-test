@@ -15,7 +15,6 @@ import static org.junit.Assert.assertNotEquals;
 public final class VolatileTest {
 
     private static volatile int volatileVar;
-    private AtomicInteger atomicVar = new AtomicInteger();
 
     private static void incrementVar() {
         volatileVar++;

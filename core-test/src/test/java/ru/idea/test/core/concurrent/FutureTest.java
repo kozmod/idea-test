@@ -1,6 +1,5 @@
 package ru.idea.test.core.concurrent;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.concurrent.Callable;
@@ -19,10 +18,9 @@ public class FutureTest {
     };
 
     @Test
-    @Ignore(" execute 2+ seconds ")
     public void shouldCall() throws ExecutionException, InterruptedException {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
-        Future<String> feature = executorService.submit(callable.get());
+        java.util.concurrent.Future<String> feature = executorService.submit(callable.get());
         System.out.println(feature.isDone());
 //        executorService.shutdownNow();
         executorService.shutdown();

@@ -20,7 +20,7 @@ public final class TestUtils {
         };
     }
 
-    public static void printExecutionTime(Runnable task) {
+    public static void printlnExecutionTime(Runnable task) {
         System.err.println(executionTime(task));
     }
 

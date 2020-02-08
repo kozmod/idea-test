@@ -1,6 +1,5 @@
 package ru.idea.test.core.concurrent;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import ru.idea.test.core.ConcurrentUtils;
 
@@ -12,7 +11,6 @@ import static org.junit.Assert.assertTrue;
 public final class RunnableAndThreadLocalTest {
 
     @Test
-    @Ignore
     public void shouldIncrementSimpleRunnableVar() throws InterruptedException {
         final SimpleRunnable task = new SimpleRunnable(0);
 
@@ -27,7 +25,6 @@ public final class RunnableAndThreadLocalTest {
     }
 
     @Test
-    @Ignore
     public void shouldIncrementThreadLocalRunnableVar() throws InterruptedException {
         final ThreadLocalSleepingRunnable task = new ThreadLocalSleepingRunnable();
 
@@ -39,7 +36,6 @@ public final class RunnableAndThreadLocalTest {
     }
 
     @Test
-    @Ignore
     public void shouldStopRunnable() throws InterruptedException {
         final StoppableRunnable task = new StoppableRunnable(1);
 
