@@ -1,7 +1,5 @@
 package ru.idea.test.core.concurrent;
 
-
-import org.junit.Ignore;
 import org.junit.Test;
 import ru.idea.test.core.ConcurrentUtils;
 import ru.idea.test.core.utils.CheckedRunnable;

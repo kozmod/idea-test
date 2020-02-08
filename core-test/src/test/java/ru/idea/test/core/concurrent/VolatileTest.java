@@ -6,8 +6,6 @@ import ru.idea.test.core.ConcurrentUtils;
 import ru.idea.test.core.DecimalFormatFactory;
 import ru.idea.test.core.TestUtils;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 

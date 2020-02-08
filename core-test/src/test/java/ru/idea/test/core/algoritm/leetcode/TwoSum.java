@@ -23,8 +23,8 @@ public class TwoSum {
 
     @Test
     public void shouldFindIndexPair() {
-        assertArrayEquals(new int[]{0,1}, useMap(new int[]{2,7,11,15}, 9));
-        assertArrayEquals(new int[]{0,3}, useMap(new int[]{0,4,3,0}, 0));
+        assertArrayEquals(new int[]{0, 1}, useMap(new int[]{2, 7, 11, 15}, 9));
+        assertArrayEquals(new int[]{0, 3}, useMap(new int[]{0, 4, 3, 0}, 0));
     }
 
     private static int[] useMap(int[] nums, int target) {
@@ -37,7 +37,7 @@ public class TwoSum {
                 return new int[]{map.get(current), i};
             } else {
                 int res = target - current;
-                    map.put(res, i);
+                map.put(res, i);
 
             }
         }

@@ -1,7 +1,6 @@
 package ru.idea.test.core;
 
 import java.util.concurrent.TimeUnit;
-import java.util.function.Consumer;
 
 public final class ConcurrentUtils {
 

@@ -20,7 +20,7 @@ public class FutureTest {
     @Test
     public void shouldCall() throws ExecutionException, InterruptedException {
         ExecutorService executorService = Executors.newSingleThreadExecutor();
-        java.util.concurrent.Future<String> feature = executorService.submit(callable.get());
+        Future<String> feature = executorService.submit(callable.get());
         System.out.println(feature.isDone());
 //        executorService.shutdownNow();
         executorService.shutdown();

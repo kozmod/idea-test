@@ -47,8 +47,8 @@ public class PlusOne {
                 d[pos] = 0;
                 return set(d, pos - 1);
             }
-                d[pos] = tmp;
-                return d;
+            d[pos] = tmp;
+            return d;
         } else {
             int[] newArray = new int[d.length + 1];
             System.arraycopy(d, 0, newArray, 1, d.length);

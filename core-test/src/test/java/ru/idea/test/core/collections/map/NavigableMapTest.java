@@ -16,7 +16,7 @@ public class NavigableMapTest {
     private LocalDateTime point;
 
     @Before
-    public void cleanPoint(){
+    public void cleanPoint() {
         point = null;
     }
 

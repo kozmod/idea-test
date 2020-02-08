@@ -43,7 +43,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
         Collection<Character> chars = new LinkedList<>();
         for (char c : s.toCharArray()) {
             if (chars.contains(c)) {
-                if(maxLength < chars.size()){
+                if (maxLength < chars.size()) {
                     maxLength = chars.size();
                 }
                 removeBefore(chars, c);
@@ -55,7 +55,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
     private static void removeBefore(Collection<Character> collection, char c) {
         AtomicBoolean lastRemove = new AtomicBoolean(true);
-        for (Iterator<Character> it = collection.iterator(); it.hasNext();){
+        for (Iterator<Character> it = collection.iterator(); it.hasNext(); ) {
             final Character ch = it.next();
             if (lastRemove.get() && !ch.equals(c)) {
                 it.remove();

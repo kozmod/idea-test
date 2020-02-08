@@ -20,19 +20,19 @@ public class OverloadingPriorityMethodTest {
         assertEquals(4, apply(boxIntValue));
     }
 
-    private static int apply(byte b){
+    private static int apply(byte b) {
         return 1;
     }
 
-    private static int apply(short b){
+    private static int apply(short b) {
         return 2;
     }
 
-    private static int apply(long b){
+    private static int apply(long b) {
         return 3;
     }
 
-    private static int apply(Integer b){
+    private static int apply(Integer b) {
         return 4;
     }
 
