@@ -1,18 +1,16 @@
 package ru.idea.test.spring.boot.demo.controller;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-public class DemoController {
+@RestController
+public class DemoRestController {
 
     @Value("${spring.custom.rs-to-root-get}")
     private String reRoot;
 
-    @RequestMapping(value = "/c")
-    @ResponseBody
+    @RequestMapping(value = "/rc")
     public String hello() {
         return reRoot;
     }

@@ -52,12 +52,8 @@ public class ProductController {
     @DeleteMapping(value = "/products/{id}")
     public ResponseEntity<Object> delete(@PathVariable("id") Long id) {
         return repo.deleteById(id)
-                .map(p -> new ResponseEntity<Object>(
-                        "Product is deleted successfully: " + p,
-                        HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<>(
-                        String.format("Product with id=%s is not exists", id),
-                        HttpStatus.OK));
+                .map(p -> new ResponseEntity<Object>("Product is deleted successfully: " + p, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(String.format("Product with id=%s is not exists", id), HttpStatus.OK));
     }
 
     @ExceptionHandler(RuntimeException.class)

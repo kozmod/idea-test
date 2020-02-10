@@ -3,7 +3,7 @@ package ru.idea.test.spring.boot;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
-import ru.idea.test.spring.boot.demo.controller.DemoConfig;
+import ru.idea.test.spring.boot.demo.DemoConfig;
 import ru.idea.test.spring.boot.product.ProductConfig;
 import ru.idea.test.spring.boot.scope.ScopeConfig;
 

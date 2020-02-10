@@ -3,6 +3,7 @@ package ru.idea.test.spring.boot.product.repo;
 import org.springframework.stereotype.Repository;
 import ru.idea.test.spring.boot.IdRepo;
 import ru.idea.test.spring.boot.product.entity.Product;
+import ru.idea.test.spring.boot.product.entity.ProductIdNotValidException;
 
 import javax.annotation.PostConstruct;
 import java.util.Collection;
@@ -42,7 +43,7 @@ public class ProductRepo implements IdRepo<Long, Product> {
     @Override
     public Optional<Product> add(Product entity) {
         if (entity == null || entity.getId() == null) {
-            throw new IllegalArgumentException("Data to add not valid: " + entity);
+            throw new ProductIdNotValidException("Data to add not valid: " + entity);
         }
         return Optional.ofNullable(productRepo.put(entity.getId(), entity));
     }
@@ -50,7 +51,7 @@ public class ProductRepo implements IdRepo<Long, Product> {
     @Override
     public Product delete(Product entity) {
         if (entity == null || entity.getId() == null) {
-            throw new IllegalArgumentException("Data to delete not valid: " + entity);
+            throw new ProductIdNotValidException("Data to delete not valid: " + entity);
         }
         return productRepo.remove(entity.getId());
     }

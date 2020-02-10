@@ -13,12 +13,12 @@ public class DemoApplicationRunner implements ApplicationRunner, CommandLineRunn
     private static Logger LOGGER = LoggerFactory.getLogger(DemoApplicationRunner.class);
 
     @Override
-    public void run(ApplicationArguments args) throws Exception {
-        LOGGER.info("RUN - DemoApplicationRunner as ApplicationRunner");
+    public void run(ApplicationArguments args) {
+        LOGGER.error("RUN - DemoApplicationRunner as ApplicationRunner");
     }
 
     @Override
-    public void run(String... args) throws Exception {
-        LOGGER.info("RUN - DemoApplicationRunner as CommandLineRunner");
+    public void run(String... args) {
+        LOGGER.error("RUN - DemoApplicationRunner as CommandLineRunner");
     }
 }
