@@ -24,12 +24,12 @@ import static org.junit.Assert.assertTrue;
  * Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
  * Follow up:
  * <p>
- * Coud you solve it without converting the integer to a string?
+ * Could you solve it without converting the integer to a string?
  */
 public class PalindromeNumber {
 
     @Test
-    public void shouldEx() {
+    public void shouldExNotUseString() {
         assertTrue(isPalindrome(0));
         assertTrue(isPalindrome(1));
         assertTrue(isPalindrome(121));
@@ -39,7 +39,6 @@ public class PalindromeNumber {
         assertFalse(isPalindrome(-121));
         assertFalse(isPalindrome(12231));
         assertFalse(isPalindrome(12233331));
-
     }
 
     public boolean isPalindrome(int x) {
@@ -59,5 +58,36 @@ public class PalindromeNumber {
         }
         num = (num - (hDivisor * tmpL))/10;
         return isEqual(num, len - 2);
+    }
+
+    //Could you solve it without converting the integer to a string? -> Y
+    @Test
+    public void shouldUseString() {
+        assertTrue(isPalindrome_2(0));
+        assertTrue(isPalindrome_2(1));
+        assertTrue(isPalindrome_2(121));
+        assertTrue(isPalindrome_2(1221));
+        assertTrue(isPalindrome_2(12221));
+
+        assertFalse(isPalindrome_2(-121));
+        assertFalse(isPalindrome_2(12231));
+        assertFalse(isPalindrome_2(12233331));
+
+    }
+
+    public boolean isPalindrome_2(int x) {
+        if(x < 0){
+            return false;
+        }
+        char[] chars = Integer.toString(x).toCharArray();
+        if(chars.length <= 1){
+            return true;
+        }
+        for (int i = 0, j= chars.length - 1; i <= j; i++, j--) {
+            if(chars[i] != chars[j]){
+                return false;
+            }
+        }
+        return true;
     }
 }
