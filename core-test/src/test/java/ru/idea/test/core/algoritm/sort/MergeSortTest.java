@@ -37,9 +37,7 @@ public class MergeSortTest {
     }
 
     public static void merge(int[] source, int[] left, int[] mid, int leftSize, int rightSize) {
-        int i = 0,
-                j = 0,
-                k = 0;
+        int i = 0, j = 0, k = 0;
         while (i < leftSize && j < rightSize) {
             if (left[i] <= mid[j])
                 source[k++] = left[i++];

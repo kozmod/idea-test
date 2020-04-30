@@ -8,6 +8,7 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 
 public class AnyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
     private static Logger LOGGER = LoggerFactory.getLogger(AnyBeanFactoryPostProcessor.class);
+
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
         LOGGER.warn(beanFactory.toString());

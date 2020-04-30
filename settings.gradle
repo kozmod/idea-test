@@ -3,4 +3,5 @@ include 'core-test'
 include 'spring-core-test'
 include 'db-test'
 include 'spring-boot-test'
+include 'spring-boot-web-bench-server'
 
