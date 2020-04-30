@@ -1,26 +1,30 @@
-package ru.idea.test.core.algoritm.leetcode;
+package ru.idea.test.core.algorithm.leetcode;
 
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 /**
- * Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.
+ * Given an array nums and a value val, remove all instances of that value in-place and return the new length.
  * <p>
  * Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
  * <p>
+ * The order of elements can be changed. It doesn't matter what you leave beyond the new length.
+ * <p>
  * Example 1:
  * <p>
- * Given nums = [1,1,2],
+ * Given nums = [3,2,2,3], val = 3,
  * <p>
- * Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.
+ * Your function should return length = 2, with the first two elements of nums being 2.
  * <p>
  * It doesn't matter what you leave beyond the returned length.
  * Example 2:
  * <p>
- * Given nums = [0,0,1,1,1,2,2,3,3,4],
+ * Given nums = [0,1,2,2,3,0,4,2], val = 2,
  * <p>
- * Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.
+ * Your function should return length = 5, with the first five elements of nums containing 0, 1, 3, 0, and 4.
+ * <p>
+ * Note that the order of those five elements can be arbitrary.
  * <p>
  * It doesn't matter what values are set beyond the returned length.
  * Clarification:
@@ -32,7 +36,7 @@ import static org.junit.Assert.assertEquals;
  * Internally you can think of this:
  * <p>
  * // nums is passed in by reference. (i.e., without making a copy)
- * int len = removeDuplicates(nums);
+ * int len = removeElement(nums, val);
  * <p>
  * // any modification to nums in your function would be known by the caller.
  * // using the length returned by your function, it prints the first len elements.
@@ -40,7 +44,7 @@ import static org.junit.Assert.assertEquals;
  * print(nums[i]);
  * }
  */
-public class RemoveDuplicatesFromSortedArray {
+public class RemoveElement {
 
     private static void assertFirstOfArray(int[] actual, int... expected) {
         for (int i = 0; i < expected.length; i++) {
@@ -50,25 +54,21 @@ public class RemoveDuplicatesFromSortedArray {
 
     @Test
     public void shouldEx() {
-        int[] array = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
-        assertEquals(5, removeDuplicates(array));
-        assertFirstOfArray(array, 0, 1, 2, 3, 4);
+        int[] array = {3, 2, 2, 3};
+        assertEquals(2, removeElement(array, 3));
+        assertFirstOfArray(array, 2, 2);
 
-        array = new int[]{};
-        assertEquals(0, removeDuplicates(array));
-        assertFirstOfArray(array);
+        array = new int[]{0, 1, 2, 2, 3, 0, 4, 2};
+        assertEquals(5, removeElement(array, 2));
+        assertFirstOfArray(array, 0, 1, 3, 0, 4);
     }
 
-    public int removeDuplicates(int[] nums) {
+    public int removeElement(int[] nums, int val) {
         int swift = 0;
-        if (nums.length != 0) {
-            int pre = nums[0];
-
-            for (int i = 1; i < nums.length; i++) {
-                if (nums[i] == pre) {
-                    swift++;
-                }
-                nums[i - swift] = pre = nums[i];
+        for (int i = 0; i < nums.length; i++) {
+            nums[i - swift] = nums[i];
+            if (nums[i] == val) {
+                swift++;
             }
         }
         return nums.length - swift;

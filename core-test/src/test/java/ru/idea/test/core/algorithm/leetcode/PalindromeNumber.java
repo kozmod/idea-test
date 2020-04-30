@@ -1,4 +1,4 @@
-package ru.idea.test.core.algoritm.leetcode;
+package ru.idea.test.core.algorithm.leetcode;
 
 import org.junit.Test;
 

@@ -1,11 +1,11 @@
-package ru.idea.test.core.algoritm.sort;
+package ru.idea.test.core.algorithm.sort;
 
 import org.junit.Test;
 
 import java.util.Arrays;
 
 import static org.junit.Assert.assertArrayEquals;
-import static ru.idea.test.core.algoritm.AlgorithmUtils.newShuffledArray;
+import static ru.idea.test.core.algorithm.AlgorithmUtils.newShuffledArray;
 
 public class MergeSortTest {
 
