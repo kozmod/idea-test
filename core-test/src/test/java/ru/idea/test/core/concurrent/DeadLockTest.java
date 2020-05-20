@@ -1,7 +1,8 @@
 package ru.idea.test.core.concurrent;
 
+import org.junit.Ignore;
 import org.junit.Test;
-import ru.idea.test.core.ConcurrentUtils;
+import ru.idea.test.utils.ConcurrentUtils;
 import ru.idea.test.core.utils.CheckedRunnable;
 
 import java.util.concurrent.TimeUnit;
@@ -14,14 +15,15 @@ import java.util.concurrent.locks.ReentrantLock;
  * <p>
  * jconsole - UI для консоли
  */
+@Ignore("DEAD LOCK")
 public class DeadLockTest {
 
     @Test
     public void shouldDeadLock_useSynchronizedBlock() throws InterruptedException {
         Object r1 = new Object();
         Object r2 = new Object();
-        Thread t1 = ConcurrentUtils.startNewThread(() -> tryDeadLock(r1, r2));
-        Thread t2 = ConcurrentUtils.startNewThread(() -> tryDeadLock(r2, r1));
+        Thread t1 = ConcurrentUtils.submit(() -> tryDeadLock(r1, r2));
+        Thread t2 = ConcurrentUtils.submit(() -> tryDeadLock(r2, r1));
 
         t1.join();
         t2.join();

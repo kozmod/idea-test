@@ -14,4 +14,14 @@ public interface CheckedRunnable {
             }
         };
     }
+
+    default Runnable runnable(){
+        return () -> {
+            try {
+                this.run();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        };
+    }
 }

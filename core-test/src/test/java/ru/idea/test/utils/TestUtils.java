@@ -1,4 +1,4 @@
-package ru.idea.test.core;
+package ru.idea.test.utils;
 
 import java.io.BufferedReader;
 import java.io.File;

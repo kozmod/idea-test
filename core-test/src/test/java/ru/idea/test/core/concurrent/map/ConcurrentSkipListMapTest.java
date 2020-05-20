@@ -1,7 +1,7 @@
 package ru.idea.test.core.concurrent.map;
 
 import org.junit.Test;
-import ru.idea.test.core.TestUtils;
+import ru.idea.test.utils.TestUtils;
 
 import java.time.LocalDateTime;
 import java.util.Comparator;

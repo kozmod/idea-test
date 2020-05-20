@@ -1,7 +1,7 @@
 package ru.idea.test.core.concurrent;
 
 import org.junit.Test;
-import ru.idea.test.core.ConcurrentUtils;
+import ru.idea.test.utils.ConcurrentUtils;
 
 import java.util.concurrent.TimeUnit;
 
@@ -14,8 +14,8 @@ public final class RunnableAndThreadLocalTest {
     public void shouldIncrementSimpleRunnableVar() throws InterruptedException {
         final SimpleRunnable task = new SimpleRunnable(0);
 
-        Thread t1 = ConcurrentUtils.startNewThread(task);
-        Thread t2 = ConcurrentUtils.startNewThread(task);
+        Thread t1 = ConcurrentUtils.submit(task);
+        Thread t2 = ConcurrentUtils.submit(task);
 
         t1.join();
         t2.join();
@@ -28,8 +28,8 @@ public final class RunnableAndThreadLocalTest {
     public void shouldIncrementThreadLocalRunnableVar() throws InterruptedException {
         final ThreadLocalSleepingRunnable task = new ThreadLocalSleepingRunnable();
 
-        Thread t1 = ConcurrentUtils.startNewThread(task);
-        Thread t2 = ConcurrentUtils.startNewThread(task);
+        Thread t1 = ConcurrentUtils.submit(task);
+        Thread t2 = ConcurrentUtils.submit(task);
 
         t1.join();
         t2.join();
@@ -39,8 +39,8 @@ public final class RunnableAndThreadLocalTest {
     public void shouldStopRunnable() throws InterruptedException {
         final StoppableRunnable task = new StoppableRunnable(1);
 
-        Thread t1 = ConcurrentUtils.startNewThread(task);
-        Thread t2 = ConcurrentUtils.startNewThread(task);
+        Thread t1 = ConcurrentUtils.submit(task);
+        Thread t2 = ConcurrentUtils.submit(task);
 
         try {
             TimeUnit.SECONDS.sleep(10L);

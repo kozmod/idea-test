@@ -1,8 +1,8 @@
 package ru.idea.test.core.concurrent;
 
 import org.junit.Test;
-import ru.idea.test.core.ConcurrentUtils;
-import ru.idea.test.core.TestStringUtils;
+import ru.idea.test.utils.ConcurrentUtils;
+import ru.idea.test.utils.TestStringUtils;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;

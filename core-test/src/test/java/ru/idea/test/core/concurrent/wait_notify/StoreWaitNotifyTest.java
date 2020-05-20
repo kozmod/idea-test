@@ -1,7 +1,7 @@
 package ru.idea.test.core.concurrent.wait_notify;
 
 import org.junit.Test;
-import ru.idea.test.core.ConcurrentUtils;
+import ru.idea.test.utils.ConcurrentUtils;
 
 public class StoreWaitNotifyTest {
 
@@ -13,8 +13,8 @@ public class StoreWaitNotifyTest {
         final Store store = new Store(PRODUCT_LIMIT);
         final ProductSupplier producer = new ProductSupplier(store, PRODUCT_QUANTITY);
         final ProductConsumer consumer = new ProductConsumer(store, PRODUCT_QUANTITY);
-        ConcurrentUtils.startNewThread(producer);
-        ConcurrentUtils.startNewThread(consumer).join();
+        ConcurrentUtils.submit(producer);
+        ConcurrentUtils.submit(consumer).join();
     }
 }
 

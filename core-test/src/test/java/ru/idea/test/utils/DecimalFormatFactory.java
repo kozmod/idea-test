@@ -1,4 +1,4 @@
-package ru.idea.test.core;
+package ru.idea.test.utils;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
