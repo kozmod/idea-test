@@ -11,6 +11,6 @@ public class AnyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        LOGGER.warn(beanFactory.toString());
+        LOGGER.warn("BF: " + beanFactory);
     }
 }

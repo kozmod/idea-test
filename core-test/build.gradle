@@ -19,10 +19,16 @@ dependencies {
     testCompile group: 'org.awaitility', name: 'awaitility', version: '4.0.1'
     testCompile group: 'org.awaitility', name: 'awaitility-proxy', version: '3.1.6'
 
-    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.6'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.6'
 
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+
+    //logging
+    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.28'
+    testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    testCompile group: 'org.json', name: 'json', version: '20190722'
 
 
 
