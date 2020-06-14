@@ -1,4 +1,4 @@
-package ru.idea.test.spring.core.conf;
+package ru.idea.test.spring.core.postprocessor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

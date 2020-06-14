@@ -1,4 +1,4 @@
-package ru.idea.test.spring.core.bean;
+package ru.idea.test.spring.core.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
