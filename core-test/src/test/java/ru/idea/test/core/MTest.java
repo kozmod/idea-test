@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MTest {
 
+    @SuppressWarnings("ConstantConditions")
     @Test
     public void should_1() throws InterruptedException {
         TimeUnit.SECONDS.sleep(30);
@@ -36,20 +37,21 @@ public class MTest {
 
         list.clear();
         list.trimToSize();
-        System.out.println("Clear:"+ LocalDateTime.now());
+        System.out.println("Clear:" + LocalDateTime.now());
         TimeUnit.SECONDS.sleep(30);
 
         list = null;
-        System.out.println("Set null:"+ LocalDateTime.now());
+        System.out.println("Set " + list + ":" + LocalDateTime.now());
         TimeUnit.SECONDS.sleep(30);
 
 
-        System.out.println("GC:"+ LocalDateTime.now());
+        System.out.println("GC:" + LocalDateTime.now());
         System.gc();
 
         TimeUnit.MINUTES.sleep(10);
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Test
     public void should_2() throws InterruptedException {
         TimeUnit.SECONDS.sleep(30);
@@ -71,20 +73,20 @@ public class MTest {
             list.add(ThreadLocalRandom.current().nextInt());
         }
         System.out.println("4");
-        System.out.println("Stop:"+ LocalDateTime.now());
+        System.out.println("Stop:" + LocalDateTime.now());
         TimeUnit.SECONDS.sleep(30);
 
         list.clear();
         list.trimToSize();
-        System.out.println("Clear:"+ LocalDateTime.now());
+        System.out.println("Clear:" + LocalDateTime.now());
         TimeUnit.SECONDS.sleep(30);
 
         list = null;
-        System.out.println("Set null:"+ LocalDateTime.now());
+        System.out.println("Set " + list + ":" + LocalDateTime.now());
         TimeUnit.SECONDS.sleep(30);
 
 
-        System.out.println("GC:"+ LocalDateTime.now());
+        System.out.println("GC:" + LocalDateTime.now());
         System.gc();
 
         TimeUnit.MINUTES.sleep(10);
