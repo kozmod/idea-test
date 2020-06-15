@@ -29,7 +29,7 @@ public final class AlgorithmUtils {
             Collections.addAll(list, array);
             Collections.shuffle(list);
 
-            final Class<?> entityClass = array[0].getClass();
+            final Class<?> entityClass = array.getClass().getComponentType();
             final T[] newArray = (T[]) Array.newInstance(entityClass,array.length);
             for (int i = 0; i < list.size(); i++) {
                 newArray[i] = list.get(i);
