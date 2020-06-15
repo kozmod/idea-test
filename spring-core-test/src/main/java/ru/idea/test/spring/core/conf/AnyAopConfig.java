@@ -10,21 +10,11 @@ import ru.idea.test.spring.core.postprocessor.AnyBeanPostProcessor;
 
 @Configuration
 @EnableAspectJAutoProxy
-public class AnyConfig {
+public class AnyAopConfig {
 
     @Bean
     public AnyBean anyBean() {
         return new AnyBean().setValue("test value");
-    }
-
-    @Bean
-    public AnyBeanPostProcessor anyPostProcessor() {
-        return new AnyBeanPostProcessor();
-    }
-
-    @Bean
-    public AnyBeanFactoryPostProcessor anyBeanFactoryPostProcessor() {
-        return new AnyBeanFactoryPostProcessor();
     }
 
     @Bean
