@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import ru.idea.test.spring.core.aspect.AnyAspect;
-import ru.idea.test.spring.core.entity.AnyBean;
+import ru.idea.test.spring.core.component.aspect.simple.AnyBean;
 import ru.idea.test.spring.core.postprocessor.AnyBeanFactoryPostProcessor;
 import ru.idea.test.spring.core.postprocessor.AnyBeanPostProcessor;
 

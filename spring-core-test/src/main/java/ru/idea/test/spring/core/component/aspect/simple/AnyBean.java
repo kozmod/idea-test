@@ -1,4 +1,4 @@
-package ru.idea.test.spring.core.entity;
+package ru.idea.test.spring.core.component.aspect.simple;
 
 import java.util.StringJoiner;
 

@@ -1,4 +1,4 @@
-package ru.idea.test.core;
+package ru.idea.test.core.proxy.lib;
 
 import org.junit.Test;
 import org.slf4j.Logger;

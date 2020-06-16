@@ -8,7 +8,7 @@ import ru.idea.test.spring.core.component.simple.AnyInjectableStringDelegateBean
 import ru.idea.test.spring.core.conf.AnyAopConfig;
 import ru.idea.test.spring.core.conf.AnyPostProcessorConfig;
 import ru.idea.test.spring.core.conf.AnyScanConfig;
-import ru.idea.test.spring.core.entity.AnyBean;
+import ru.idea.test.spring.core.component.aspect.simple.AnyBean;
 
 public class SpringContextTest {
 

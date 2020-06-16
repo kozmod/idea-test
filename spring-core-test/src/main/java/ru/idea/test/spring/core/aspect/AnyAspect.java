@@ -17,13 +17,13 @@ import java.util.stream.Collectors;
 @Aspect
 public class AnyAspect {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(AnyPostProcessorConfig.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AnyPostProcessorConfig.class);
 
-    @Pointcut("execution(public * ru.idea.test.spring.core.entity.AnyBean.*(..))")
+    @Pointcut("execution(public * ru.idea.test.spring.core.component.aspect.simple.AnyBean.*(..))")
     public void callAnyBean() {
     }
 
-    @Pointcut("within(ru.idea.test.spring.core.entity.*)")
+    @Pointcut("within(ru.idea.test.spring.core.component.*)")
     public void callAnyBeanPackage() {
     }
 
