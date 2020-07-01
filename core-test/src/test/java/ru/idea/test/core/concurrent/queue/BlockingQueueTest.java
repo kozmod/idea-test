@@ -8,21 +8,10 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.SynchronousQueue;
 
-public class QueueTest {
+public class BlockingQueueTest {
 
     private static final String A = "a";
     private static final String B = "B";
-
-    @Test
-    public void synchronousQueueTest() throws InterruptedException {
-        BlockingQueue<String> q = new SynchronousQueue<>();
-        ConcurrentUtils.submit(
-                ConcurrentUtils.sleepingRunnable(2, () -> q.put(A))
-        );
-        ConcurrentUtils.submitChecked(
-                () -> Assert.assertEquals(A, q.take())
-        ).join();
-    }
 
     @Test
     public void arrayBlockingQueueTest() throws InterruptedException {
