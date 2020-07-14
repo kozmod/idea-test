@@ -1,0 +1,18 @@
+// найти user_id у которого в заданном месяце был статус 'start' и 'end'
+
+CREATE TABLE history
+(
+    id         bigint PRIMARY KEY NOT NULL,
+    created_at int DEFAULT 0      NOT NULL,
+    updated_at int DEFAULT 0      NOT NULL,
+    user_id    BIGINT,
+    st         varchar(100)       NOT NULL,
+);
+
+SELECT DISTINCT h.user_id
+FROM history h
+         FULL JOIN history h2
+                   ON h.user_id = h2.user_id
+WHERE h.created_at >= 0
+  AND h.updated_at <= 10
+  AND ((h.st LIKE 'a' AND h2.st LIKE 'b') OR (h.st LIKE 'b' AND h2.st LIKE 'a'))
