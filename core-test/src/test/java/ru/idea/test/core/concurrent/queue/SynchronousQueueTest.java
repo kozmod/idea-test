@@ -2,6 +2,7 @@ package ru.idea.test.core.concurrent.queue;
 
 import org.junit.Assert;
 import org.junit.Test;
+import ru.idea.test.core.utils.CheckedRunnable;
 import ru.idea.test.utils.ConcurrentUtils;
 
 import java.util.concurrent.BlockingQueue;
@@ -21,12 +22,12 @@ public class SynchronousQueueTest {
                     Assert.assertEquals(0, q.size());
                 })
         );
-        ConcurrentUtils.submitChecked(
-                () -> {
+        ConcurrentUtils.submit(
+                CheckedRunnable.wrap(() -> {
                     Assert.assertEquals(0, q.size());
                     Assert.assertEquals(A, q.take());
                     Assert.assertEquals(0, q.size());
-                }
+                })
         ).join();
     }
 }

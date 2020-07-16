@@ -2,6 +2,7 @@ package ru.idea.test.core.concurrent.queue;
 
 import org.junit.Assert;
 import org.junit.Test;
+import ru.idea.test.core.utils.CheckedRunnable;
 import ru.idea.test.utils.ConcurrentUtils;
 
 import java.util.concurrent.ArrayBlockingQueue;
@@ -22,11 +23,11 @@ public class BlockingQueueTest {
         ConcurrentUtils.submit(
                 ConcurrentUtils.sleepingRunnable(2, () -> q.put(B))
         );
-        ConcurrentUtils.submitChecked(
-                () -> {
+        ConcurrentUtils.submit(
+                CheckedRunnable.wrap(() -> {
                     Assert.assertEquals(A, q.take());
                     Assert.assertEquals(B, q.take());
-                }
+                })
         ).join();
     }
 }

@@ -15,7 +15,7 @@ import static org.mockito.Mockito.when;
 public class SpyTest {
 
     @Spy
-    private ClassToSpying classToSpying = new ClassToSpying();
+    private final ClassToSpying classToSpying = new ClassToSpying();
 
     @Test
     public void shouldWorkWithoutOverriding() {

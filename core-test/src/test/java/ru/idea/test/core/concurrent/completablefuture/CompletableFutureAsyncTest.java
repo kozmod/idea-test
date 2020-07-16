@@ -1,4 +1,4 @@
-package ru.idea.test.core.concurrent;
+package ru.idea.test.core.concurrent.completablefuture;
 
 import org.junit.Test;
 import ru.idea.test.utils.ConcurrentUtils;
@@ -10,10 +10,11 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import static org.junit.Assert.*;
 
-public class CompletableFutureTest {
+public class CompletableFutureAsyncTest {
 
     private static final int SLEEPING_TIME = 5;
 
+    @SuppressWarnings("ConstantConditions")
     @Test
     public void shouldRunAsync() throws ExecutionException, InterruptedException {
         final Thread mainThread = Thread.currentThread();

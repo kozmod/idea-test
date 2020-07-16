@@ -15,12 +15,6 @@ public final class ConcurrentUtils {
         return thread;
     }
 
-    public static Thread submitChecked(CheckedRunnable runnable) {
-        Thread thread = new Thread(runnable.runnable());
-        thread.start();
-        return thread;
-    }
-
     public static Runnable sleepingRunnable(int sleepingSeconds, CheckedRunnable runnable) {
         return () -> {
             try {
