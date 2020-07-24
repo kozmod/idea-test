@@ -13,7 +13,7 @@ import java.util.function.Supplier;
 
 public class FutureTest {
 
-    private static Supplier<Callable<String>> callable = () -> () -> {
+    private static final Supplier<Callable<String>> callable = () -> () -> {
         TimeUnit.SECONDS.sleep(1);
         return "RESULT";
     };

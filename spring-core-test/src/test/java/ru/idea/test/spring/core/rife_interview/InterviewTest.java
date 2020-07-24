@@ -28,21 +28,20 @@ public class InterviewTest {
 
     @Test
     public void shouldThrowException() {
-        class TestClass extends Thread {
+        class ThrowExceptionThreadClass extends Thread {
             @Override
             public void run() {
                 System.err.println("RUN");
                 throw new RuntimeException("Uncatchable exception from another thread ");
             }
-
         }
-
         try {
-            new TestClass().start();
+            new ThrowExceptionThreadClass().start();
             System.err.println("MAIN");
         } catch (RuntimeException e) {
             System.err.println("CATCH");
         }
+        System.err.println("END");
     }
 
     @SuppressWarnings("ResultOfMethodCallIgnored")
