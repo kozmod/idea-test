@@ -8,14 +8,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class FastReaCsvTest {
+public class FastGenCsv {
 
-    private static final String pathLng = "/Users/a18388871/IdeaProjects/idea-test/core-test/src/test/resources/csv/gen/";
+    static final String pathLng = "/Users/a18388871/IdeaProjects/idea-test/core-test/src/test/resources/csv/gen/";
+    static final String name = "lng.csv";
 
     @Test
     public void genCsv() {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(pathLng.concat("lng.csv")))) {
-            for (int i = 0; i < 100_000; i++) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(pathLng.concat(name)))) {
+            for (int i = 0; i < 1_000; i++) {
                 bw.write(new RandomCsvLine().toString());
                 bw.newLine();
                 bw.flush();
