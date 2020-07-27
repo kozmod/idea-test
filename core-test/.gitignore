@@ -1,0 +1,19 @@
+### JetBrains ###
+.idea
+*/out/*
+
+### Maven ###
+*/target/*
+
+### Greadle ###
+.gradle
+*/build/*
+
+### Files ###
+*.iml
+*.log
+
+## File-based project format:
+*.iws
+
+test/resources/csv/gen/
