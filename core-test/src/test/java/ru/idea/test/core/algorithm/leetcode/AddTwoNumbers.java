@@ -23,8 +23,8 @@ public class AddTwoNumbers {
 
     @Test
     public void shouldExecute() {
-        ListNode lnA = listNode(2, 4, 3);
-        ListNode lnB = listNode(5, 6, 4);
+        var lnA = listNode(2, 4, 3);
+        var lnB = listNode(5, 6, 4);
         Assert.assertEquals(
                 "[7,0,8]",
                 toString(addTwoNumbers(lnA, lnB))
@@ -41,11 +41,11 @@ public class AddTwoNumbers {
     private static ListNode listNode(int... ints) {
         ListNode ln = null;
         ListNode last = null;
-        for (int i = 0; i < ints.length; i++) {
+        for (int anInt : ints) {
             if (ln == null) {
-                last = ln = new ListNode(ints[i]);
+                last = ln = new ListNode(anInt);
             } else {
-                last.next = new ListNode(ints[i]);
+                last.next = new ListNode(anInt);
                 last = last.next;
             }
         }
