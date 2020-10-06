@@ -2,8 +2,11 @@ package ru.idea.test.core.collections.stream;
 
 import org.junit.Test;
 
-import java.util.List;
+import java.util.*;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class StreamTest {
 
@@ -18,5 +21,4 @@ public class StreamTest {
         System.err.println("Change Bears: " + changeBears);
         System.err.println("------------------------------------------------------------------------------------------");
     }
-
 }
