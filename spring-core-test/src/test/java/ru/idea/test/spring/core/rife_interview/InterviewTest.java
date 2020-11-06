@@ -44,6 +44,43 @@ public class InterviewTest {
         System.err.println("END");
     }
 
+    @Test
+    public void shouldThrowException_2() {
+        Thread t = new Thread(() -> {
+            throw new RuntimeException("re");
+        });
+        try {
+            t.start();
+            System.out.println("MAIN");
+        } catch (Exception ex) {
+            System.out.println("CATCH");
+        }
+        System.out.println("END");
+    }
+
+    @Test
+    public void shouldThrowException_3() {
+        Thread.UncaughtExceptionHandler h = new Thread.UncaughtExceptionHandler() {
+            @Override
+            public void uncaughtException(Thread th, Throwable ex) {
+                System.err.println("Uncaught exception: " + ex);
+            }
+        };
+        Thread t = new Thread(() -> {
+            throw new RuntimeException("re");
+        });
+        t.setUncaughtExceptionHandler(h);
+        try {
+            t.start();
+            System.out.println("MAIN");
+        } catch (Exception ex) {
+            System.out.println("CATCH");
+        }
+        System.out.println("END");
+    }
+
+
+
     @SuppressWarnings("ResultOfMethodCallIgnored")
     @Test
     public void shouldReturnWithRoundDown() {
